@@ -3,7 +3,6 @@ FROM nginx
 # Remove the default Nginx configuration file
 
 RUN rm -v /etc/nginx/nginx.conf
-RUN rm -rf /etc/nginx/conf.d
 
 # Copy a configuration file from the current directory
 
