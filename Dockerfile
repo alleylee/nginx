@@ -1,16 +1,19 @@
 FROM daocloud.io/nginx
-COPY ./ /usr/share/nginx/html
 
-# Define mountable directories.
-VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
+# Remove the default Nginx configuration file
 
-# Define working directory.
-WORKDIR /etc/nginx
+RUN rm -v /etc/nginx/nginx.conf
 
-# Define default command.
+# Copy a configuration file from the current directory
 
-CMD ["nginx", "-g", "daemon off;"]
+ADD nginx.conf /etc/nginx/
 
-# Expose ports.
+# Append "daemon off;" to the beginning of the configuration
+
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
+# Expose ports
+
 EXPOSE 80
-EXPOSE 443
+
+CMD service nginx start
