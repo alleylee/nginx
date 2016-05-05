@@ -3,12 +3,12 @@ FROM nginx
 # Remove the default Nginx configuration file
 
 RUN rm -v /etc/nginx/nginx.conf
-RUN rm -rf /etc/nginx/vhosts
+RUN rm -rf /etc/nginx/conf.d
 
 # Copy a configuration file from the current directory
 
 ADD nginx.conf /etc/nginx/
-ADD ./vhosts /etc/nginx/vhosts
+ADD ./conf.d /etc/nginx/conf.d
 
 # Append "daemon off;" to the beginning of the configuration
 
