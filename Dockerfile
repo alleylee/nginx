@@ -1,4 +1,4 @@
-FROM dockerfile/ubuntu
+FROM daocloud.io/ubuntu
 
 # Install Nginx.
 RUN \
