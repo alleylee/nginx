@@ -1,4 +1,4 @@
-FROM daocloud/nginx
+FROM nginx
 
 # Remove the default Nginx configuration file
 
