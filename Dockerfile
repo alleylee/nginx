@@ -1,4 +1,5 @@
 FROM nginx
+FROM httpd:2.4
 
 # Remove the default configuration file
 
@@ -9,6 +10,8 @@ RUN rm -v /etc/apache2/sites-available/000-default.conf
 
 ADD nginx.conf /etc/nginx/
 ADD 000-default.conf /etc/apache2/sites-available/
+
+COPY ./app/ /var/www/
 
 # Append "daemon off;" to the beginning of the configuration
 

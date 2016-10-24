@@ -1,0 +1,11 @@
+#
+
+# robots.txt 
+
+#
+
+
+
+User-agent: *
+
+Disallow: /guanli/
