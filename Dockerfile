@@ -4,11 +4,7 @@ FROM nginx
 
 RUN rm -v /etc/nginx/nginx.conf
 
-RUN sudo tee /etc/nginx/conf.d/php.conf << EOF
-upstream php {
-    server unix:/var/run/php5-fpm.sock;
-}
-EOF
+RUN sudo tee /etc/nginx/conf.d/php.conf << EOF upstream php { server unix:/var/run/php5-fpm.sock; } EOF
 
 # Copy a configuration file from the current directory
 
