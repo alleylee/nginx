@@ -1,1 +1,0 @@
-<?php exit;//a:4:{s:6:"lognum";i:2;s:8:"draftnum";i:0;s:8:"checknum";i:0;i:1;a:2:{s:6:"lognum";i:2;s:8:"draftnum";i:0;}}
